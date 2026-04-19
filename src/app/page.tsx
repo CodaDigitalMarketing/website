@@ -5,7 +5,7 @@ function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-cream-dark">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#" className="flex items-center gap-3">
-          <Image src="/logo.png" alt="Coda" width={40} height={40} />
+          <Image src="/logo.png" alt="Coda" width={40} height={28} className="h-auto" />
           <span className="text-xl font-bold tracking-tight text-charcoal">
             CODA
           </span>
@@ -66,8 +66,8 @@ function Hero() {
             <Image
               src="/logo.png"
               alt="Coda"
-              width={366}
-              height={260}
+              width={300}
+              height={212}
               className="w-44 md:w-[300px] h-auto"
               priority
             />
@@ -310,7 +310,7 @@ function Footer() {
     <footer className="py-8 border-t border-cream-dark">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-2">
-          <Image src="/logo.png" alt="Coda" width={24} height={24} />
+          <Image src="/logo.png" alt="Coda" width={24} height={17} className="h-auto" />
           <span className="text-sm font-semibold text-charcoal">CODA</span>
         </div>
         <p className="text-sm text-charcoal-light">

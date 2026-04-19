@@ -62,15 +62,18 @@ function Hero() {
               </a>
             </div>
           </div>
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 flex flex-col items-center">
             <Image
               src="/logo.png"
               alt="Coda"
-              width={280}
-              height={280}
-              className="w-48 h-48 md:w-72 md:h-72"
+              width={366}
+              height={260}
+              className="w-44 md:w-[300px] h-auto"
               priority
             />
+            <span className="text-3xl md:text-5xl font-bold tracking-widest text-charcoal mt-2">
+              CODA
+            </span>
           </div>
         </div>
       </div>

@@ -1,28 +1,46 @@
 import Image from "next/image";
+import ScrollReveal from "@/components/ScrollReveal";
+
+/* ─────────────────────────── Navbar ─────────────────────────── */
 
 function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-cream-dark">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-3">
-          <Image src="/logo.png" alt="Coda" width={40} height={28} className="h-auto" />
-          <span className="text-xl font-bold tracking-tight text-charcoal">
-            CODA
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-cream/80 backdrop-blur-md">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex items-center justify-between">
+        <a href="#" className="flex items-center gap-3 group">
+          <Image
+            src="/logo.png"
+            alt="Coda"
+            width={32}
+            height={24}
+            className="h-auto transition-transform duration-300 group-hover:rotate-12"
+          />
+          <span className="text-lg font-serif font-semibold tracking-widest text-charcoal uppercase">
+            Coda
           </span>
         </a>
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-charcoal-light">
-          <a href="#services" className="hover:text-amber transition-colors">
+        <div className="hidden md:flex items-center gap-10 text-sm tracking-wide text-charcoal-light">
+          <a
+            href="/blog"
+            className="hover:text-charcoal transition-colors duration-300"
+          >
+            Blog
+          </a>
+          <a
+            href="#services"
+            className="hover:text-charcoal transition-colors duration-300"
+          >
             Services
           </a>
-          <a href="#process" className="hover:text-amber transition-colors">
-            How It Works
-          </a>
-          <a href="#about" className="hover:text-amber transition-colors">
+          <a
+            href="#about"
+            className="hover:text-charcoal transition-colors duration-300"
+          >
             About
           </a>
           <a
             href="#contact"
-            className="bg-amber text-white px-5 py-2 rounded-md hover:bg-amber-dark transition-colors"
+            className="text-charcoal font-medium border-b border-amber pb-0.5 hover:border-charcoal transition-colors duration-300"
           >
             Get in Touch
           </a>
@@ -32,294 +50,467 @@ function Navbar() {
   );
 }
 
+/* ─────────────────────────── Hero ──────────────────────────── */
+
 function Hero() {
   return (
-    <section className="pt-32 pb-20 md:pt-44 md:pb-32">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
-          <div className="flex-1">
-            <h1 className="text-4xl md:text-6xl font-bold text-charcoal leading-tight">
-              Your business deserves a website that{" "}
-              <span className="text-amber">works</span>.
-            </h1>
-            <p className="mt-6 text-lg md:text-xl text-charcoal-light leading-relaxed max-w-2xl">
-              Coda builds fast, professional, SEO-optimized websites for local
-              businesses. Get online quickly, get found by customers, and have a
-              partner on retainer to keep things running smoothly.
+    <section className="min-h-screen flex items-center relative overflow-hidden">
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full">
+        <div className="grid lg:grid-cols-12 gap-4 lg:gap-6 items-center">
+          {/* Text — asymmetric, takes 7 cols */}
+          <div className="lg:col-span-7 pt-24 lg:pt-0">
+            <p className="text-sm tracking-[0.3em] uppercase text-amber font-medium mb-6">
+              Digital Marketing &amp; Web Design
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-charcoal leading-[1.05] tracking-tight">
+              Websites that
+              <br />
+              <em className="text-amber not-italic">move</em> your
+              <br />
+              business forward.
+            </h1>
+            <p className="mt-8 text-lg md:text-xl text-charcoal-light leading-relaxed max-w-xl">
+              Handcrafted, SEO-optimized websites for local businesses — built
+              fast, supported forever.
+            </p>
+            <div className="mt-12 flex items-center gap-6">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center bg-amber text-white px-8 py-3.5 rounded-md text-lg font-medium hover:bg-amber-dark transition-colors"
+                className="group inline-flex items-center gap-3 bg-charcoal text-white px-8 py-4 rounded-sm text-sm font-medium tracking-wide uppercase hover:bg-amber transition-colors duration-500"
               >
-                Let&apos;s Talk
+                Start a Project
+                <svg
+                  className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                  />
+                </svg>
               </a>
               <a
                 href="#services"
-                className="inline-flex items-center justify-center border-2 border-charcoal text-charcoal px-8 py-3.5 rounded-md text-lg font-medium hover:bg-charcoal hover:text-white transition-colors"
+                className="text-sm tracking-wide text-charcoal-light hover:text-charcoal transition-colors duration-300 underline underline-offset-4 decoration-amber/40 hover:decoration-charcoal"
               >
-                See What We Do
+                What We Do
               </a>
             </div>
           </div>
-          <div className="flex-shrink-0 flex flex-col items-center">
-            <Image
-              src="/logo.png"
-              alt="Coda"
-              width={300}
-              height={212}
-              className="w-44 md:w-[300px] h-auto"
-              priority
-            />
-            <span className="text-3xl md:text-5xl font-bold tracking-widest text-charcoal mt-2">
-              CODA
-            </span>
+
+          {/* Logo — asymmetric, takes 5 cols, offset */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <div className="relative flex flex-col items-center">
+              <Image
+                src="/logo.png"
+                alt="Coda"
+                width={340}
+                height={252}
+                className="w-52 md:w-64 lg:w-[280px] h-auto relative z-10 mx-auto"
+                priority
+              />
+              <span className="relative z-10 mt-4 font-serif text-4xl md:text-5xl lg:text-6xl tracking-[0.25em] text-charcoal text-center block">
+                CODA
+              </span>
+            </div>
           </div>
         </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-charcoal-light/50">
+        <span className="text-xs tracking-[0.2em] uppercase">Scroll</span>
+        <div className="w-px h-8 bg-gradient-to-b from-charcoal-light/40 to-transparent animate-pulse" />
       </div>
     </section>
   );
 }
 
+/* ─────────────────────────── Services ──────────────────────── */
+
 const services = [
   {
-    title: "Website Design & Development",
+    number: "01",
+    title: "Web Design &\nDevelopment",
     description:
-      "Clean, modern websites built to showcase your business. No bloat, no filler — just what your customers need to find you and take action.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
-      </svg>
-    ),
+      "Clean, modern websites built from scratch. No templates, no bloat — just purposeful design that serves your customers.",
   },
   {
-    title: "Search Engine Optimization",
+    number: "02",
+    title: "Local SEO\nOptimization",
     description:
-      "Every site we build is optimized for local search from day one. We make sure your business shows up when nearby customers are looking.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-      </svg>
-    ),
+      "Every site ships optimized for local search. We make sure the people near you can find you when they need you.",
   },
   {
-    title: "Ongoing Support & Changes",
+    number: "03",
+    title: "Ongoing Retainer\nSupport",
     description:
-      "Need an update? A new page? Changed hours? We're on retainer and ready to make changes quickly — so your site always stays current.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182M2.985 19.644l3.181-3.182" />
-      </svg>
-    ),
+      "Your business changes — your website should too. We're always a message away for updates, tweaks, and new pages.",
   },
   {
-    title: "Fast Turnaround",
+    number: "04",
+    title: "Fast\nTurnaround",
     description:
-      "We don't drag projects out for months. Your site gets built quickly and launched efficiently so you can start reaching customers sooner.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
-      </svg>
-    ),
+      "We don't drag projects out. You get a professional site launched quickly so you can start reaching customers sooner.",
   },
 ];
 
 function Services() {
   return (
-    <section id="services" className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-charcoal">
-            What We Offer
-          </h2>
-          <p className="mt-4 text-charcoal-light text-lg max-w-2xl mx-auto">
-            Everything a local business needs to get online and stay there.
+    <section id="services" className="py-32">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <ScrollReveal>
+          <p className="text-sm tracking-[0.3em] uppercase text-amber font-medium mb-4">
+            What We Do
           </p>
-        </div>
-        <div className="grid md:grid-cols-2 gap-8">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="p-8 rounded-lg border border-cream-dark hover:border-amber/40 transition-colors bg-cream/50"
-            >
-              <div className="text-amber mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold text-charcoal mb-3">
-                {service.title}
-              </h3>
-              <p className="text-charcoal-light leading-relaxed">
-                {service.description}
-              </p>
-            </div>
-          ))}
-        </div>
+          <h2 className="font-serif text-4xl md:text-5xl text-charcoal tracking-tight mb-20">
+            Everything your business needs
+            <br />
+            to thrive online.
+          </h2>
+        </ScrollReveal>
+
+        <ScrollReveal className="stagger">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-cream-dark">
+            {services.map((service) => (
+              <div
+                key={service.number}
+                className="bg-cream p-8 lg:p-10 group hover:bg-white transition-colors duration-500"
+              >
+                <span className="text-xs tracking-[0.2em] text-amber font-medium">
+                  {service.number}
+                </span>
+                <h3 className="font-serif text-xl md:text-2xl text-charcoal mt-4 mb-5 whitespace-pre-line leading-snug">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-charcoal-light leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
 }
 
+/* ─────────────────────────── Process ───────────────────────── */
+
 const steps = [
   {
-    number: "01",
-    title: "Discovery Call",
+    title: "Discover",
     description:
-      "We chat about your business, your goals, and what you need from your website. No jargon, no pressure.",
+      "We start with a conversation — your goals, your customers, your story. No jargon, no pressure.",
   },
   {
-    number: "02",
-    title: "Design & Build",
+    title: "Design",
     description:
-      "We build your site — clean, fast, and optimized for search engines. You review it and we refine until it's right.",
+      "We craft a site that reflects your business. You see it, you give feedback, we refine until it's right.",
   },
   {
-    number: "03",
     title: "Launch",
     description:
-      "Your site goes live. We handle the technical details so you can focus on running your business.",
+      "Your site goes live — fast, optimized, and ready to work for you from day one.",
   },
   {
-    number: "04",
-    title: "Ongoing Support",
+    title: "Support",
     description:
-      "Need changes? We're a message away. Your site stays up-to-date and working for you, always.",
+      "We stay on retainer. Your site evolves with your business, always current, always performing.",
   },
 ];
 
 function Process() {
   return (
-    <section id="process" className="py-20">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-charcoal">
-            How It Works
-          </h2>
-          <p className="mt-4 text-charcoal-light text-lg max-w-2xl mx-auto">
-            Simple, straightforward, and designed to respect your time.
-          </p>
-        </div>
-        <div className="grid md:grid-cols-4 gap-8">
-          {steps.map((step) => (
-            <div key={step.number} className="text-center md:text-left">
-              <span className="text-5xl font-bold text-amber/20">
-                {step.number}
-              </span>
-              <h3 className="text-lg font-semibold text-charcoal mt-2 mb-3">
-                {step.title}
-              </h3>
-              <p className="text-charcoal-light text-sm leading-relaxed">
-                {step.description}
+    <section className="py-32 bg-charcoal text-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <ScrollReveal>
+          <div className="grid lg:grid-cols-12 gap-12 mb-20">
+            <div className="lg:col-span-5">
+              <p className="text-sm tracking-[0.3em] uppercase text-amber font-medium mb-4">
+                Our Process
+              </p>
+              <h2 className="font-serif text-4xl md:text-5xl tracking-tight leading-tight">
+                Simple by design.
+                <br />
+                <span className="text-white/40">Effective by nature.</span>
+              </h2>
+            </div>
+            <div className="lg:col-span-5 lg:col-start-8 flex items-end">
+              <p className="text-white/60 leading-relaxed">
+                We&apos;ve stripped the process down to what actually matters. No
+                endless meetings, no scope creep — just clear steps that respect
+                your time and get results.
               </p>
             </div>
-          ))}
-        </div>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal className="stagger">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+            {steps.map((step, i) => (
+              <div key={step.title} className="relative">
+                <span className="font-serif text-7xl text-white/[0.06] absolute -top-6 -left-2">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="relative">
+                  <div className="w-8 h-px bg-amber mb-6" />
+                  <h3 className="text-lg font-medium tracking-wide mb-3">
+                    {step.title}
+                  </h3>
+                  <p className="text-sm text-white/50 leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
 }
+
+/* ─────────────────────────── About ─────────────────────────── */
 
 function About() {
   return (
-    <section id="about" className="py-20 bg-charcoal text-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold">Why Coda?</h2>
-          <p className="mt-6 text-lg text-white/80 leading-relaxed">
-            Big agencies charge big prices and move at their own pace. Coda is
-            different. You work directly with me — one person who understands
-            your business and can make things happen fast. No layers of
-            bureaucracy, no waiting weeks for a small text change.
-          </p>
-          <p className="mt-4 text-lg text-white/80 leading-relaxed">
-            I specialize in helping local businesses get a professional online
-            presence without the overhead. Your website should be an asset, not a
-            headache.
-          </p>
-          <div className="mt-12 grid grid-cols-3 gap-8">
-            <div>
-              <div className="text-3xl font-bold text-amber">Fast</div>
-              <p className="mt-2 text-sm text-white/60">
-                Quick turnaround on builds and changes
+    <section id="about" className="py-32">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="grid lg:grid-cols-12 gap-16 items-start">
+          <ScrollReveal className="reveal-left lg:col-span-5">
+            <p className="text-sm tracking-[0.3em] uppercase text-amber font-medium mb-4">
+              About Coda
+            </p>
+            <h2 className="font-serif text-4xl md:text-5xl text-charcoal tracking-tight leading-tight">
+              No overhead.
+              <br />
+              No runaround.
+              <br />
+              <span className="text-amber">Real results.</span>
+            </h2>
+          </ScrollReveal>
+
+          <ScrollReveal className="reveal-right lg:col-span-6 lg:col-start-7">
+            <div className="space-y-6 text-charcoal-light leading-relaxed text-lg">
+              <p>
+                Big agencies charge big prices and move at their own pace. Coda
+                is different — lean, responsive, and built around getting things
+                done fast.
+              </p>
+              <p>
+                No layers of bureaucracy, no waiting weeks for a small text
+                change. We specialize in helping local businesses get a
+                professional online presence without the overhead.
+              </p>
+              <p>
+                Your website should be an asset, not a headache. That&apos;s the
+                promise.
               </p>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-amber">Personal</div>
-              <p className="mt-2 text-sm text-white/60">
-                Work directly with me, every time
-              </p>
+
+            <div className="grid grid-cols-3 gap-8 mt-14 pt-14 border-t border-cream-dark">
+              <div>
+                <span className="font-serif text-3xl md:text-4xl text-charcoal">
+                  24hr
+                </span>
+                <p className="text-xs tracking-wide uppercase text-charcoal-light mt-2">
+                  Average response time
+                </p>
+              </div>
+              <div>
+                <span className="font-serif text-3xl md:text-4xl text-charcoal">
+                  100%
+                </span>
+                <p className="text-xs tracking-wide uppercase text-charcoal-light mt-2">
+                  Client retention
+                </p>
+              </div>
+              <div>
+                <span className="font-serif text-3xl md:text-4xl text-charcoal">
+                  2wk
+                </span>
+                <p className="text-xs tracking-wide uppercase text-charcoal-light mt-2">
+                  Typical launch time
+                </p>
+              </div>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-amber">Reliable</div>
-              <p className="mt-2 text-sm text-white/60">
-                On retainer and always responsive
-              </p>
-            </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
   );
 }
+
+/* ─────────────────────────── Contact / CTA ─────────────────── */
 
 function Contact() {
   return (
-    <section id="contact" className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-charcoal">
-            Let&apos;s Get Started
-          </h2>
-          <p className="mt-4 text-charcoal-light text-lg">
-            Ready to get your business online? Reach out and let&apos;s talk
-            about what you need.
-          </p>
-          <div className="mt-10 space-y-4">
-            <a
-              href="mailto:hello@codawebsites.com"
-              className="flex items-center justify-center gap-3 text-lg text-charcoal hover:text-amber transition-colors"
-            >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-              </svg>
-              hello@codawebsites.com
-            </a>
-            <a
-              href="tel:+15551234567"
-              className="flex items-center justify-center gap-3 text-lg text-charcoal hover:text-amber transition-colors"
-            >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
-              </svg>
-              (555) 123-4567
-            </a>
+    <section id="contact" className="py-32 bg-charcoal text-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <ScrollReveal>
+          <div className="max-w-3xl">
+            <p className="text-sm tracking-[0.3em] uppercase text-amber font-medium mb-6">
+              Let&apos;s Work Together
+            </p>
+            <h2 className="font-serif text-4xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1]">
+              Ready to get your business{" "}
+              <em className="text-amber not-italic">online?</em>
+            </h2>
+            <p className="mt-8 text-lg text-white/60 leading-relaxed max-w-xl">
+              Reach out and let&apos;s talk about what you need. No pressure, no
+              jargon — just a conversation about how we can help.
+            </p>
+
+            <div className="mt-14 flex flex-col sm:flex-row gap-8">
+              <a
+                href="mailto:codadigitalmarketing@gmail.com"
+                className="group inline-flex items-center gap-3 bg-amber text-white px-10 py-4 rounded-sm text-sm font-medium tracking-wide uppercase hover:bg-amber-light transition-colors duration-500"
+              >
+                Send a Message
+                <svg
+                  className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                  />
+                </svg>
+              </a>
+            </div>
+
+            <div className="mt-14 pt-14 border-t border-white/10 flex flex-col sm:flex-row gap-10">
+              <div>
+                <p className="text-xs tracking-[0.2em] uppercase text-white/30 mb-2">
+                  Email
+                </p>
+                <a
+                  href="mailto:codadigitalmarketing@gmail.com"
+                  className="text-white/80 hover:text-amber transition-colors duration-300"
+                >
+                  codadigitalmarketing@gmail.com
+                </a>
+              </div>
+              <div>
+                <p className="text-xs tracking-[0.2em] uppercase text-white/30 mb-2">
+                  Phone
+                </p>
+                <a
+                  href="tel:+18148821459"
+                  className="text-white/80 hover:text-amber transition-colors duration-300"
+                >
+                  (814) 882-1459
+                </a>
+              </div>
+            </div>
           </div>
-          <div className="mt-10">
-            <a
-              href="mailto:hello@codawebsites.com"
-              className="inline-flex items-center justify-center bg-amber text-white px-10 py-4 rounded-md text-lg font-medium hover:bg-amber-dark transition-colors"
-            >
-              Send Us a Message
-            </a>
-          </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
 }
 
+/* ─────────────────────────── Blog Preview ─────────────────── */
+
+import { posts } from "./blog/posts";
+
+function BlogPreview() {
+  const featured = posts.slice(0, 3);
+
+  return (
+    <section className="py-32 bg-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <ScrollReveal>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
+            <div>
+              <p className="text-sm tracking-[0.3em] uppercase text-amber font-medium mb-4">
+                From the Blog
+              </p>
+              <h2 className="font-serif text-4xl md:text-5xl text-charcoal tracking-tight">
+                Insights for local
+                <br />
+                business owners.
+              </h2>
+            </div>
+            <a
+              href="/blog"
+              className="text-sm tracking-wide text-charcoal-light hover:text-charcoal transition-colors duration-300 underline underline-offset-4 decoration-amber/40 hover:decoration-charcoal"
+            >
+              View All Articles
+            </a>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal className="stagger">
+          <div className="grid md:grid-cols-3 gap-8">
+            {featured.map((post) => (
+              <a
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="group"
+              >
+                <div className="border-t border-cream-dark pt-8">
+                  <p className="text-xs tracking-[0.2em] uppercase text-amber font-medium mb-3">
+                    {post.category}
+                  </p>
+                  <h3 className="font-serif text-xl md:text-2xl text-charcoal leading-snug group-hover:text-amber transition-colors duration-500">
+                    {post.title}
+                  </h3>
+                  <p className="mt-4 text-sm text-charcoal-light leading-relaxed">
+                    {post.excerpt}
+                  </p>
+                  <div className="mt-6 flex items-center gap-2 text-xs tracking-wide text-charcoal-light/60">
+                    <span>{post.date}</span>
+                    <span>&middot;</span>
+                    <span>{post.readTime}</span>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────── Footer ────────────────────────── */
+
 function Footer() {
   return (
-    <footer className="py-8 border-t border-cream-dark">
-      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-        <div className="flex items-center gap-2">
-          <Image src="/logo.png" alt="Coda" width={24} height={17} className="h-auto" />
-          <span className="text-sm font-semibold text-charcoal">CODA</span>
+    <footer className="py-10 border-t border-cream-dark">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="flex items-center gap-3">
+          <Image
+            src="/logo.png"
+            alt="Coda"
+            width={24}
+            height={18}
+            className="h-auto"
+          />
+          <span className="text-sm font-serif font-semibold tracking-widest text-charcoal uppercase">
+            Coda
+          </span>
         </div>
-        <p className="text-sm text-charcoal-light">
-          &copy; {new Date().getFullYear()} Coda. All rights reserved.
+        <p className="text-xs tracking-wide text-charcoal-light">
+          &copy; {new Date().getFullYear()} Coda
         </p>
       </div>
     </footer>
   );
 }
+
+/* ─────────────────────────── Page ──────────────────────────── */
 
 export default function Home() {
   return (
@@ -330,6 +521,7 @@ export default function Home() {
         <Services />
         <Process />
         <About />
+        <BlogPreview />
         <Contact />
       </main>
       <Footer />

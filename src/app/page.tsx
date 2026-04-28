@@ -325,18 +325,18 @@ function About() {
               </div>
               <div>
                 <span className="font-serif text-3xl md:text-4xl text-charcoal">
-                  100%
+                  &lt;1wk
                 </span>
                 <p className="text-xs tracking-wide uppercase text-charcoal-light mt-2">
-                  Client retention
+                  Typical launch time
                 </p>
               </div>
               <div>
                 <span className="font-serif text-3xl md:text-4xl text-charcoal">
-                  2wk
+                  24/7
                 </span>
                 <p className="text-xs tracking-wide uppercase text-charcoal-light mt-2">
-                  Typical launch time
+                  Your site works for you
                 </p>
               </div>
             </div>

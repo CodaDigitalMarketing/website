@@ -17,6 +17,13 @@ export default function ScrollReveal({
     const el = ref.current;
     if (!el) return;
 
+    // If element is already visible (e.g. back navigation), reveal immediately
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add("visible");
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
